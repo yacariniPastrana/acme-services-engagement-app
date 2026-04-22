@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Engagement Summary" icon-name="standard:case_transcript">
+        <div class="slds-p-around_medium">
+            <template if:true={summary.data}>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                        <p class="slds-text-title">Completed Tasks</p>
+                        <p class="slds-text-heading_small">{summary.data.completedTasks}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                        <p class="slds-text-title">Upcoming Events</p>
+                        <p class="slds-text-heading_small">{summary.data.upcomingEvents}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1">
+                        <p class="slds-text-title">Related Opp. Amount</p>
+                        <p class="slds-text-heading_small">
+                            <lightning-formatted-number value={summary.data.opportunityAmount} format-style="currency">
+                            </lightning-formatted-number>
+                        </p>
+                    </div>
+                </div>
+            </template>
+
+            <div class="slds-m-top_medium">
+                <lightning-button label="Quick Follow-Up Call" 
+                                  variant="brand" 
+                                  onclick={handleFollowUp}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

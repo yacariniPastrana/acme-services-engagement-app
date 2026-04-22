@@ -1,0 +1,9 @@
+.sfdx/
+.sf/
+.vscode/
+.local.sfdx/
+node_modules/
+bin/
+*.log
+.logs/
+.testresults/
